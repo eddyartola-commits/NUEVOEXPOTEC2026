@@ -264,7 +264,6 @@ public class Comidas extends javax.swing.JPanel {
         boton21 = new Componentes.Boton2();
         fondo = new Labels.LabelEscalable();
         tituloImpacto1 = new Componentes.TituloImpacto();
-        jLabel4 = new javax.swing.JLabel();
         panelPrincipiante = new javax.swing.JPanel();
         tituloImpacto3 = new Componentes.TituloImpacto();
         labelEscalable12 = new Labels.LabelEscalable();
@@ -345,13 +344,6 @@ public class Comidas extends javax.swing.JPanel {
         tituloImpacto1.setFont(new java.awt.Font("Horizon", 1, 36)); // NOI18N
         add(tituloImpacto1);
         tituloImpacto1.setBounds(15, 140, 560, 44);
-
-        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel4.setFont(new java.awt.Font("Horizon", 1, 32)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("¿resistes nuestra");
-        add(jLabel4);
-        jLabel4.setBounds(10, 90, 530, 50);
 
         panelPrincipiante.setBackground(new java.awt.Color(19, 3, 27));
         panelPrincipiante.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -507,7 +499,6 @@ public class Comidas extends javax.swing.JPanel {
     private Componentes.Boton2 boton21;
     private Labels.LabelEscalable fondo;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
