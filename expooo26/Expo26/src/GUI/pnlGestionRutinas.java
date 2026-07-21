@@ -88,6 +88,8 @@ public class pnlGestionRutinas extends javax.swing.JPanel {
     }//GEN-LAST:event_tblRutinasMouseClicked
 
     private void btnGuardarRutinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarRutinaActionPerformed
+       
+        System.out.println("Entró al botón Guardar");
         int fila = tblRutinas.getSelectedRow();
         // Verificar que haya una rutina seleccionada
         if (fila == -1) {
@@ -108,11 +110,17 @@ public class pnlGestionRutinas extends javax.swing.JPanel {
                 .replace(".jpeg", "")
                 .replace("_", " ");
         DB_Rutinas db = new DB_Rutinas();
+        
+        System.out.println("ID: " + idRutina);
+        System.out.println("Nombre: " + nombreRutina);
+        System.out.println("Imagen: " + imagenSeleccionada);
         boolean actualizado = db.actualizarImagenRutina(
                 idRutina,
                 nombreRutina,
                 imagenSeleccionada
         );
+        
+        System.out.println("Resultado UPDATE: " + actualizado);
         if (actualizado) {
             JOptionPane.showMessageDialog(this,
                     "Rutina actualizada correctamente");

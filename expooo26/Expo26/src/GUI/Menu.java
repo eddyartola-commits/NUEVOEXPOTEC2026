@@ -10,8 +10,8 @@ import javax.swing.*;
 public class Menu extends javax.swing.JFrame {
 
     private int idUsuarioLogueado;
-   
-    public static boolean datosIngresados = false; 
+
+    public static boolean datosIngresados = false;
     public static double pesoUsuarioActual = 0.0;
     public static double punteoUsuarioActual = 0.0;
 
@@ -103,7 +103,7 @@ public class Menu extends javax.swing.JFrame {
 
     public Menu(String rol) {
 
-     this(-1);
+        this(-1);
 
         aplicarPermisos(rol);
 
@@ -941,8 +941,8 @@ public class Menu extends javax.swing.JFrame {
         btnPruebaImpacto.setBackground(new java.awt.Color(91, 71, 153));
         btnPruebaImpacto.setOpaque(true);
         cambiarPantalla(new PruebaImpacto(idUsuarioLogueado));
-        
-        
+
+
     }//GEN-LAST:event_btnPruebaImpactoMousePressed
 
     private void btnHistorialMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHistorialMouseEntered
@@ -983,34 +983,30 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRutinasUsuarioMouseExited
 
     private void btnRutinasUsuarioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRutinasUsuarioMousePressed
-        // TODO add your handling code here:
-        resetearColoresBotones();
-        btnRutinasUsuario.setBackground(new java.awt.Color(91, 71, 153));
-        btnRutinasUsuario.setOpaque(true);
-        cambiarPantalla(new RutinasUsuario());
-        
-         if (GUI.Menu.datosIngresados) {
-        resetearColoresBotones();
-        btnRutinasUsuario.setBackground(new java.awt.Color(91, 71, 153));
-        btnRutinasUsuario.setOpaque(true);
-        
-        // 1. LLAMADA AL CONSTRUCTOR: Crea la pantalla de rutinas (ocultando los paneles por defecto)
-        RutinasUsuario pantallaRutinas = new RutinasUsuario();
-        
-        // 2. ACTUALIZACIÓN: Inyectamos el puntaje del golpe para encender la rutina correcta
-        pantallaRutinas.actualizarInterfazRutina(GUI.Menu.punteoUsuarioActual);
-        
-        // 3. CAMBIO DE PANTALLA: Mostramos las rutinas al usuario
-        cambiarPantalla(pantallaRutinas);
-    } else {
-        // SI NO HA INGRESADO DATOS: Bloqueamos la acción y avisamos en pantalla
-        javax.swing.JOptionPane.showMessageDialog(
-            this, 
-            "¡Acceso Denegado!\nPara ver tus rutinas, primero debes rellenar tus datos en el apartado 'PRUEBA' y presionar 'GUARDAR DATOS'.", 
-            "Requisito Obligatorio", 
-            javax.swing.JOptionPane.WARNING_MESSAGE
-        );
-    }
+        if (GUI.Menu.datosIngresados) {
+            resetearColoresBotones();
+            btnRutinasUsuario.setBackground(new java.awt.Color(91, 71, 153));
+            btnRutinasUsuario.setOpaque(true);
+            resetearColoresBotones();
+            cambiarPantalla(new RutinasUsuario());
+            // 1. LLAMADA AL CONSTRUCTOR: Crea la pantalla de rutinas (ocultando los paneles por defecto)
+            RutinasUsuario pantallaRutinas = new RutinasUsuario();
+            btnRutinasUsuario.setBackground(new java.awt.Color(91, 71, 153));
+            btnRutinasUsuario.setOpaque(true);
+            // 2. ACTUALIZACIÓN: Inyectamos el puntaje del golpe para encender la rutina correcta
+            pantallaRutinas.actualizarInterfazRutina(GUI.Menu.punteoUsuarioActual);
+
+            // 3. CAMBIO DE PANTALLA: Mostramos las rutinas al usuario
+            cambiarPantalla(pantallaRutinas);
+        } else {
+            // SI NO HA INGRESADO DATOS: Bloqueamos la acción y avisamos en pantalla
+            javax.swing.JOptionPane.showMessageDialog(
+                    this,
+                    "¡Acceso Denegado!\nPara ver tus rutinas, primero debes rellenar tus datos en el apartado 'PRUEBA' y presionar 'GUARDAR DATOS'.",
+                    "Requisito Obligatorio",
+                    javax.swing.JOptionPane.WARNING_MESSAGE
+            );
+        }
     }//GEN-LAST:event_btnRutinasUsuarioMousePressed
 
     private void btnComidasUsuarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnComidasUsuarioMouseEntered
@@ -1027,30 +1023,30 @@ public class Menu extends javax.swing.JFrame {
         btnComidasUsuario.setBackground(new java.awt.Color(91, 71, 153));
         btnComidasUsuario.setOpaque(true);
         cambiarPantalla(new Comidas());
-        
-         // Evaluamos si el usuario ya guardó datos de forma exitosa en el panel central
-    if (GUI.Menu.datosIngresados) {
-        resetearColoresBotones();
-        btnComidasUsuario.setBackground(new java.awt.Color(91, 71, 153));
-        btnComidasUsuario.setOpaque(true);
-        
-        // 1. LLAMADA AL CONSTRUCTOR: Crea la pantalla (ocultando los paneles por defecto)
-        Comidas pantallaComidas = new Comidas();
-        
-        // 2. ACTUALIZACIÓN: Inyectamos el peso para encender el panel correcto
-        pantallaComidas.actualizarInterfazComida(GUI.Menu.pesoUsuarioActual);
-        
-        // 3. CAMBIO DE PANTALLA: Concedemos el acceso visual
-        cambiarPantalla(pantallaComidas);
-    } else {
-        // SI NO HA INGRESADO DATOS: Bloqueamos la acción y avisamos en pantalla
-        javax.swing.JOptionPane.showMessageDialog(
-            this, 
-            "¡Acceso Denegado!\nPara ver tus comidas, primero debes rellenar tus datos en el apartado 'PRUEBA' y presionar 'GUARDAR DATOS'.", 
-            "Requisito Obligatorio", 
-            javax.swing.JOptionPane.WARNING_MESSAGE
-        );
-    }
+
+        // Evaluamos si el usuario ya guardó datos de forma exitosa en el panel central
+        if (GUI.Menu.datosIngresados) {
+            resetearColoresBotones();
+            btnComidasUsuario.setBackground(new java.awt.Color(91, 71, 153));
+            btnComidasUsuario.setOpaque(true);
+
+            // 1. LLAMADA AL CONSTRUCTOR: Crea la pantalla (ocultando los paneles por defecto)
+            Comidas pantallaComidas = new Comidas();
+
+            // 2. ACTUALIZACIÓN: Inyectamos el peso para encender el panel correcto
+            pantallaComidas.actualizarInterfazComida(GUI.Menu.pesoUsuarioActual);
+
+            // 3. CAMBIO DE PANTALLA: Concedemos el acceso visual
+            cambiarPantalla(pantallaComidas);
+        } else {
+            // SI NO HA INGRESADO DATOS: Bloqueamos la acción y avisamos en pantalla
+            javax.swing.JOptionPane.showMessageDialog(
+                    this,
+                    "¡Acceso Denegado!\nPara ver tus comidas, primero debes rellenar tus datos en el apartado 'PRUEBA' y presionar 'GUARDAR DATOS'.",
+                    "Requisito Obligatorio",
+                    javax.swing.JOptionPane.WARNING_MESSAGE
+            );
+        }
     }//GEN-LAST:event_btnComidasUsuarioMousePressed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -1123,7 +1119,7 @@ public class Menu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-              new Menu(0).setVisible(true);
+                new Menu(0).setVisible(true);
             }
         });
 
