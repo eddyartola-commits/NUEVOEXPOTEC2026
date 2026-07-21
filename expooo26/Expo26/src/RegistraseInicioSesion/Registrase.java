@@ -133,7 +133,7 @@ public class Registrase extends javax.swing.JFrame {
         jPanel1.add(chkMostrar);
         chkMostrar.setBounds(570, 380, 170, 20);
         jPanel1.add(textoDifuminadoRegistro1);
-        textoDifuminadoRegistro1.setBounds(610, 90, 310, 29);
+        textoDifuminadoRegistro1.setBounds(120, 50, 310, 29);
 
         txtContrasena.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         txtContrasena.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -150,7 +150,7 @@ public class Registrase extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtContrasena);
-        txtContrasena.setBounds(570, 340, 330, 30);
+        txtContrasena.setBounds(40, 360, 330, 30);
 
         txtEmail.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         txtEmail.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -167,7 +167,7 @@ public class Registrase extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtEmail);
-        txtEmail.setBounds(570, 260, 330, 30);
+        txtEmail.setBounds(60, 270, 330, 30);
 
         txtUsuario.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         txtUsuario.setCaretColor(new java.awt.Color(255, 255, 255));
@@ -186,7 +186,7 @@ public class Registrase extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtUsuario);
-        txtUsuario.setBounds(570, 180, 330, 30);
+        txtUsuario.setBounds(40, 180, 330, 30);
 
         jLabel2.setFont(new java.awt.Font("Questrial", 0, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -204,7 +204,7 @@ public class Registrase extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Contraseña");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(570, 300, 188, 38);
+        jLabel4.setBounds(570, 300, 190, 38);
 
         lblPregunta.setFont(new java.awt.Font("Questrial", 0, 14)); // NOI18N
         lblPregunta.setForeground(new java.awt.Color(255, 255, 255));
@@ -226,7 +226,7 @@ public class Registrase extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnRegistrar);
-        btnRegistrar.setBounds(630, 410, 240, 40);
+        btnRegistrar.setBounds(100, 110, 240, 40);
 
         labelEscalable1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/usuario.png"))); // NOI18N
         jPanel1.add(labelEscalable1);
@@ -250,7 +250,7 @@ public class Registrase extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton1);
-        jButton1.setBounds(840, 10, 70, 24);
+        jButton1.setBounds(840, 10, 70, 27);
 
         jButton2.setText("x");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -259,7 +259,7 @@ public class Registrase extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton2);
-        jButton2.setBounds(920, 10, 80, 24);
+        jButton2.setBounds(920, 10, 80, 27);
 
         jPanel1.add(jPanel2);
         jPanel2.setBounds(0, 0, 1030, 40);
