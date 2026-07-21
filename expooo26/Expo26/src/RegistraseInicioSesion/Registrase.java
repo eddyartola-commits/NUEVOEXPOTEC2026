@@ -150,7 +150,7 @@ public class Registrase extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtContrasena);
-        txtContrasena.setBounds(40, 360, 330, 30);
+        txtContrasena.setBounds(570, 340, 330, 30);
 
         txtEmail.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         txtEmail.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -167,7 +167,7 @@ public class Registrase extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtEmail);
-        txtEmail.setBounds(60, 270, 330, 30);
+        txtEmail.setBounds(570, 260, 330, 30);
 
         txtUsuario.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         txtUsuario.setCaretColor(new java.awt.Color(255, 255, 255));
@@ -186,7 +186,7 @@ public class Registrase extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtUsuario);
-        txtUsuario.setBounds(40, 180, 330, 30);
+        txtUsuario.setBounds(570, 180, 330, 30);
 
         jLabel2.setFont(new java.awt.Font("Questrial", 0, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -226,7 +226,7 @@ public class Registrase extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnRegistrar);
-        btnRegistrar.setBounds(100, 110, 240, 40);
+        btnRegistrar.setBounds(630, 410, 240, 40);
 
         labelEscalable1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/usuario.png"))); // NOI18N
         jPanel1.add(labelEscalable1);
