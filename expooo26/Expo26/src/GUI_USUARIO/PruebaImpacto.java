@@ -320,7 +320,7 @@ try {
         boton1.setText("JUGAR");
         boton1.setFont(new java.awt.Font("Horizon", 1, 24)); // NOI18N
         add(boton1);
-        boton1.setBounds(60, 320, 430, 70);
+        boton1.setBounds(850, 460, 430, 70);
 
         boton2.setText("GUARDAR DATOS");
         boton2.addActionListener(new java.awt.event.ActionListener() {
@@ -351,7 +351,7 @@ try {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("de potencia y domina la precisión ");
         add(jLabel4);
-        jLabel4.setBounds(60, 210, 395, 32);
+        jLabel4.setBounds(60, 210, 395, 25);
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Questrial", 0, 24)); // NOI18N
@@ -372,7 +372,7 @@ try {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("en cada impacto.");
         add(jLabel3);
-        jLabel3.setBounds(60, 250, 220, 32);
+        jLabel3.setBounds(60, 250, 220, 25);
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Horizon", 1, 48)); // NOI18N
@@ -389,21 +389,21 @@ try {
         tituloImpacto7.setText("DATOS");
         tituloImpacto7.setFont(new java.awt.Font("Horizon", 1, 48)); // NOI18N
         add(tituloImpacto7);
-        tituloImpacto7.setBounds(520, 496, 350, 62);
+        tituloImpacto7.setBounds(520, 496, 350, 56);
 
         jLabel12.setBackground(new java.awt.Color(255, 255, 255));
         jLabel12.setFont(new java.awt.Font("Questrial", 1, 24)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Pon a prueba tus reflejos, destruye tus límites ");
         add(jLabel12);
-        jLabel12.setBounds(60, 170, 534, 32);
+        jLabel12.setBounds(60, 170, 534, 25);
 
         jLabel13.setBackground(new java.awt.Color(255, 255, 255));
         jLabel13.setFont(new java.awt.Font("Questrial", 1, 24)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Registra tus datos despues de cada juego!");
         add(jLabel13);
-        jLabel13.setBounds(30, 570, 534, 32);
+        jLabel13.setBounds(30, 570, 534, 25);
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Horizon", 1, 48)); // NOI18N
