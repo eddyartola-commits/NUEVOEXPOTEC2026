@@ -37,7 +37,7 @@ public class Historial extends javax.swing.JPanel {
 
         
 
-        // 1. Establecemos el título correcto en el Label
+        /* 1. Establecemos el título correcto en el Label
         jLabel1.setText("Historial Personal");
 
         try {
@@ -59,7 +59,7 @@ public class Historial extends javax.swing.JPanel {
                 g2.drawImage(imgOrig, 0, 0, tamIcono, tamIcono, null);
                 g2.dispose();
 
-                // Asignamos el ícono ya suavizado y escalado al label
+                 // Asignamos el ícono ya suavizado y escalado al label
                 jLabel1.setIcon(new ImageIcon(imgRedim));
 
                 // Espaciado y alineación entre el ícono y el texto
@@ -70,8 +70,8 @@ public class Historial extends javax.swing.JPanel {
                 System.err.println("No se pudo encontrar el icono: Usuariooo");
             }
         } catch (Exception e) {
-            System.err.println("Error al cargar el icono: " + e.getMessage());
-        }
+            System.err.println("Error al cargar el icono: " + e.getMessage());  
+        }*/
 
         setLayout(null);
 
@@ -363,16 +363,21 @@ public class Historial extends javax.swing.JPanel {
 
         tabla = new Componentes.Tabla();
         btneliminar = new Componentes.Boton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         barra1 = new Componentes.Barra();
         barra2 = new Componentes.Barra();
+        labelEscalable1 = new Labels.LabelEscalable();
+        tituloImpacto1 = new Componentes.TituloImpacto();
+        tituloImpacto2 = new Componentes.TituloImpacto();
+        pOWER1 = new Componentes.POWER();
+        pOWER2 = new Componentes.POWER();
+        pOWER3 = new Componentes.POWER();
+        pOWER4 = new Componentes.POWER();
 
         setBackground(new java.awt.Color(19, 3, 27));
         setForeground(new java.awt.Color(153, 255, 204));
         setLayout(null);
         add(tabla);
-        tabla.setBounds(50, 230, 1370, 540);
+        tabla.setBounds(30, 540, 1370, 540);
 
         btneliminar.setText("Eliminar Dato");
         btneliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -381,33 +386,21 @@ public class Historial extends javax.swing.JPanel {
             }
         });
         add(btneliminar);
-        btneliminar.setBounds(590, 810, 310, 70);
-
-        jLabel1.setFont(new java.awt.Font("Horizon", 0, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Historial Personal");
-        add(jLabel1);
-        jLabel1.setBounds(270, 40, 880, 56);
-
-        jLabel2.setFont(new java.awt.Font("Horizon", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Datos Personales ");
-        add(jLabel2);
-        jLabel2.setBounds(60, 170, 382, 29);
+        btneliminar.setBounds(570, 1120, 310, 70);
 
         javax.swing.GroupLayout barra1Layout = new javax.swing.GroupLayout(barra1);
         barra1.setLayout(barra1Layout);
         barra1Layout.setHorizontalGroup(
             barra1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 920, Short.MAX_VALUE)
+            .addGap(0, 610, Short.MAX_VALUE)
         );
         barra1Layout.setVerticalGroup(
             barra1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 6, Short.MAX_VALUE)
+            .addGap(0, 10, Short.MAX_VALUE)
         );
 
         add(barra1);
-        barra1.setBounds(250, 100, 920, 6);
+        barra1.setBounds(20, 86, 610, 10);
 
         javax.swing.GroupLayout barra2Layout = new javax.swing.GroupLayout(barra2);
         barra2.setLayout(barra2Layout);
@@ -421,7 +414,37 @@ public class Historial extends javax.swing.JPanel {
         );
 
         add(barra2);
-        barra2.setBounds(60, 200, 380, 6);
+        barra2.setBounds(40, 510, 380, 6);
+
+        labelEscalable1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/KN_1.png"))); // NOI18N
+        add(labelEscalable1);
+        labelEscalable1.setBounds(640, 0, 810, 450);
+
+        tituloImpacto1.setText("HISTORIAL PERSONAL");
+        tituloImpacto1.setFont(new java.awt.Font("Horizon", 1, 36)); // NOI18N
+        add(tituloImpacto1);
+        tituloImpacto1.setBounds(20, 50, 620, 40);
+
+        tituloImpacto2.setText("DATOS PERSONALES");
+        tituloImpacto2.setFont(new java.awt.Font("Horizon", 1, 24)); // NOI18N
+        add(tituloImpacto2);
+        tituloImpacto2.setBounds(40, 480, 380, 29);
+
+        pOWER1.setText("\"No importa qué tan duro te ");
+        add(pOWER1);
+        pOWER1.setBounds(50, 120, 490, 50);
+
+        pOWER2.setText("golpee la vida, tu historial demuestra");
+        add(pOWER2);
+        pOWER2.setBounds(10, 170, 640, 47);
+
+        pOWER3.setText("que siempre tienes un");
+        add(pOWER3);
+        pOWER3.setBounds(110, 220, 410, 47);
+
+        pOWER4.setText("puñetazo más para dar.\"");
+        add(pOWER4);
+        pOWER4.setBounds(90, 270, 430, 47);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
@@ -480,8 +503,13 @@ public class Historial extends javax.swing.JPanel {
     private Componentes.Barra barra1;
     private Componentes.Barra barra2;
     private Componentes.Boton btneliminar;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private Labels.LabelEscalable labelEscalable1;
+    private Componentes.POWER pOWER1;
+    private Componentes.POWER pOWER2;
+    private Componentes.POWER pOWER3;
+    private Componentes.POWER pOWER4;
     private Componentes.Tabla tabla;
+    private Componentes.TituloImpacto tituloImpacto1;
+    private Componentes.TituloImpacto tituloImpacto2;
     // End of variables declaration//GEN-END:variables
 }
