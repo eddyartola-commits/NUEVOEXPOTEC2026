@@ -320,7 +320,7 @@ try {
         boton1.setText("JUGAR");
         boton1.setFont(new java.awt.Font("Horizon", 1, 24)); // NOI18N
         add(boton1);
-        boton1.setBounds(850, 460, 430, 70);
+        boton1.setBounds(170, 340, 430, 70);
 
         boton2.setText("GUARDAR DATOS");
         boton2.addActionListener(new java.awt.event.ActionListener() {
