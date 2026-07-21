@@ -1,4 +1,3 @@
-
 package GUI_USUARIO;
 
 import BaseDatos.DB_Rutinas;
@@ -20,227 +19,225 @@ import javax.swing.SwingUtilities;
 import javax.swing.Timer;
 import java.sql.ResultSet;
 
-
 public class RutinasUsuario extends javax.swing.JPanel {
-
 
     public RutinasUsuario() {
         initComponents();
         cargarImagenesDesdeBD();
-    panelPrincipiante1.setVisible(false);
-    panelIntermedio1.setVisible(false);
-    panelAvanzado.setVisible(false);
-        
+        panelPrincipiante1.setVisible(false);
+        panelIntermedio1.setVisible(false);
+        panelAvanzado.setVisible(false);
+
         setLayout(null);
 
 // Panel oculto (Configurado con layout nulo para permitir la animación interna del botón)
-JPanel panelOpciones = new JPanel();
-panelOpciones.setLayout(null); // 🔹 IMPORTANTE: Permite animar componentes por coordenadas
-panelOpciones.setOpaque(false); 
-panelOpciones.setVisible(false);
-panelOpciones.setBounds(1215, 100, 230, 90); // 🔹 Ampliado un poco para dar margen al crecimiento
+        JPanel panelOpciones = new JPanel();
+        panelOpciones.setLayout(null); // 🔹 IMPORTANTE: Permite animar componentes por coordenadas
+        panelOpciones.setOpaque(false);
+        panelOpciones.setVisible(false);
+        panelOpciones.setBounds(1215, 100, 230, 90); // 🔹 Ampliado un poco para dar margen al crecimiento
 
 // Botón "Cerrar sesión"
-JButton btnCerrarSesion = new JButton("CERRAR SESIÓN") {
-    @Override
-    protected void paintComponent(Graphics g) {
-        Graphics2D g2 = (Graphics2D) g.create();
-        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        GradientPaint gp = new GradientPaint(0, 0, new Color(200, 0, 0),
-                                             getWidth(), getHeight(), new Color(120, 0, 200));
-        g2.setPaint(gp);
-        g2.fillRoundRect(0, 0, getWidth(), getHeight(), 35, 35);
-        g2.dispose();
-        super.paintComponent(g);
-    }
-};
+        JButton btnCerrarSesion = new JButton("CERRAR SESIÓN") {
+            @Override
+            protected void paintComponent(Graphics g) {
+                Graphics2D g2 = (Graphics2D) g.create();
+                g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                GradientPaint gp = new GradientPaint(0, 0, new Color(200, 0, 0),
+                        getWidth(), getHeight(), new Color(120, 0, 200));
+                g2.setPaint(gp);
+                g2.fillRoundRect(0, 0, getWidth(), getHeight(), 35, 35);
+                g2.dispose();
+                super.paintComponent(g);
+            }
+        };
 
 // 🔹 Dimensiones Base y de Zoom para Cerrar Sesión
-final int btnAnchoBase = 210;
-final int btnAltoBase = 55;
-final int btnAnchoZoom = 225; // Crece 15px a lo ancho
-final int btnAltoZoom = 65;  // Crece 10px a lo alto
-final int btnPaso = 2;
+        final int btnAnchoBase = 210;
+        final int btnAltoBase = 55;
+        final int btnAnchoZoom = 225; // Crece 15px a lo ancho
+        final int btnAltoZoom = 65;  // Crece 10px a lo alto
+        final int btnPaso = 2;
 
 // Posición inicial centrada dentro de panelOpciones
-btnCerrarSesion.setBounds(10, 10, btnAnchoBase, btnAltoBase);
-btnCerrarSesion.setFont(new Font("Horizon", Font.BOLD, 14));
-btnCerrarSesion.setForeground(Color.WHITE);
-btnCerrarSesion.setFocusPainted(false);
-btnCerrarSesion.setContentAreaFilled(false);
-btnCerrarSesion.setBorderPainted(false);
-btnCerrarSesion.setOpaque(false);
-btnCerrarSesion.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        btnCerrarSesion.setBounds(10, 10, btnAnchoBase, btnAltoBase);
+        btnCerrarSesion.setFont(new Font("Horizon", Font.BOLD, 14));
+        btnCerrarSesion.setForeground(Color.WHITE);
+        btnCerrarSesion.setFocusPainted(false);
+        btnCerrarSesion.setContentAreaFilled(false);
+        btnCerrarSesion.setBorderPainted(false);
+        btnCerrarSesion.setOpaque(false);
+        btnCerrarSesion.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
 // 🔹 Animación de Zoom para Cerrar Sesión (Cambia tamaño y color)
-btnCerrarSesion.addMouseListener(new java.awt.event.MouseAdapter() {
-    private Timer timerBtn;
+        btnCerrarSesion.addMouseListener(new java.awt.event.MouseAdapter() {
+            private Timer timerBtn;
 
-    @Override
-    public void mouseEntered(java.awt.event.MouseEvent e) {
-        btnCerrarSesion.setForeground(Color.ORANGE);
-        
-        if (timerBtn != null && timerBtn.isRunning()) {
-            timerBtn.stop();
-        }
+            @Override
+            public void mouseEntered(java.awt.event.MouseEvent e) {
+                btnCerrarSesion.setForeground(Color.ORANGE);
 
-        timerBtn = new Timer(10, ev -> {
-            int w = btnCerrarSesion.getWidth();
-            int h = btnCerrarSesion.getHeight();
-            if (w < btnAnchoZoom || h < btnAltoZoom) {
-                int nuevoW = Math.min(w + btnPaso, btnAnchoZoom);
-                int nuevoH = Math.min(h + btnPaso, btnAltoZoom);
-                int nuevoX = btnCerrarSesion.getX() - (nuevoW - w) / 2;
-                int nuevoY = btnCerrarSesion.getY() - (nuevoH - h) / 2;
-                btnCerrarSesion.setBounds(nuevoX, nuevoY, nuevoW, nuevoH);
-            } else {
-                timerBtn.stop();
+                if (timerBtn != null && timerBtn.isRunning()) {
+                    timerBtn.stop();
+                }
+
+                timerBtn = new Timer(10, ev -> {
+                    int w = btnCerrarSesion.getWidth();
+                    int h = btnCerrarSesion.getHeight();
+                    if (w < btnAnchoZoom || h < btnAltoZoom) {
+                        int nuevoW = Math.min(w + btnPaso, btnAnchoZoom);
+                        int nuevoH = Math.min(h + btnPaso, btnAltoZoom);
+                        int nuevoX = btnCerrarSesion.getX() - (nuevoW - w) / 2;
+                        int nuevoY = btnCerrarSesion.getY() - (nuevoH - h) / 2;
+                        btnCerrarSesion.setBounds(nuevoX, nuevoY, nuevoW, nuevoH);
+                    } else {
+                        timerBtn.stop();
+                    }
+                });
+                timerBtn.start();
+            }
+
+            @Override
+            public void mouseExited(java.awt.event.MouseEvent e) {
+                btnCerrarSesion.setForeground(Color.WHITE);
+
+                if (timerBtn != null && timerBtn.isRunning()) {
+                    timerBtn.stop();
+                }
+
+                timerBtn = new Timer(10, ev -> {
+                    int w = btnCerrarSesion.getWidth();
+                    int h = btnCerrarSesion.getHeight();
+                    if (w > btnAnchoBase || h > btnAltoBase) {
+                        int nuevoW = Math.max(w - btnPaso, btnAnchoBase);
+                        int nuevoH = Math.max(h - btnPaso, btnAltoBase);
+                        int nuevoX = btnCerrarSesion.getX() + (w - nuevoW) / 2;
+                        int nuevoY = btnCerrarSesion.getY() + (h - nuevoH) / 2;
+                        btnCerrarSesion.setBounds(nuevoX, nuevoY, nuevoW, nuevoH);
+                    } else {
+                        timerBtn.stop();
+                    }
+                });
+                timerBtn.start();
             }
         });
-        timerBtn.start();
-    }
 
-    @Override
-    public void mouseExited(java.awt.event.MouseEvent e) {
-        btnCerrarSesion.setForeground(Color.WHITE);
-        
-        if (timerBtn != null && timerBtn.isRunning()) {
-            timerBtn.stop();
-        }
-
-        timerBtn = new Timer(10, ev -> {
-            int w = btnCerrarSesion.getWidth();
-            int h = btnCerrarSesion.getHeight();
-            if (w > btnAnchoBase || h > btnAltoBase) {
-                int nuevoW = Math.max(w - btnPaso, btnAnchoBase);
-                int nuevoH = Math.max(h - btnPaso, btnAltoBase);
-                int nuevoX = btnCerrarSesion.getX() + (w - nuevoW) / 2;
-                int nuevoY = btnCerrarSesion.getY() + (h - nuevoH) / 2;
-                btnCerrarSesion.setBounds(nuevoX, nuevoY, nuevoW, nuevoH);
-            } else {
-                timerBtn.stop();
-            }
+        btnCerrarSesion.addActionListener(e -> {
+            JOptionPane.showMessageDialog(this, "Redirigiendo a Registrarse");
+            // Abrir nuevo frame
+            Registrase login = new Registrase();
+            login.setVisible(true);
+            // Cerrar ventana actual
+            Window window = SwingUtilities.getWindowAncestor(this);
+            if (window != null) {
+                window.dispose();
+            };
         });
-        timerBtn.start();
-    }
-});
-
- btnCerrarSesion.addActionListener(e -> {
-        JOptionPane.showMessageDialog(this, "Redirigiendo a Registrarse");
-         // Abrir nuevo frame
-         Registrase login = new Registrase();
-         login.setVisible(true);
-        // Cerrar ventana actual
-         Window window = SwingUtilities.getWindowAncestor(this);
-         if (window != null) {
-         window.dispose();
-         };
-});
-panelOpciones.add(btnCerrarSesion);
-
+        panelOpciones.add(btnCerrarSesion);
 
 // 🔹 Método local de alta calidad para redimensionar los íconos a 45x45 de forma nítida
-java.util.function.BiFunction<String, Integer, ImageIcon> crearIconoCalidad = (ruta, tam) -> {
-    java.net.URL url = getClass().getResource(ruta);
-    if (url == null) return new ImageIcon();
-    Image imgOrig = new ImageIcon(url).getImage();
-    java.awt.image.BufferedImage imgRedim = new java.awt.image.BufferedImage(tam, tam, java.awt.image.BufferedImage.TYPE_INT_ARGB);
-    Graphics2D g2 = imgRedim.createGraphics();
-    g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
-    g2.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
-    g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-    g2.drawImage(imgOrig, 0, 0, tam, tam, null);
-    g2.dispose();
-    return new ImageIcon(imgRedim);
-};
+        java.util.function.BiFunction<String, Integer, ImageIcon> crearIconoCalidad = (ruta, tam) -> {
+            java.net.URL url = getClass().getResource(ruta);
+            if (url == null) {
+                return new ImageIcon();
+            }
+            Image imgOrig = new ImageIcon(url).getImage();
+            java.awt.image.BufferedImage imgRedim = new java.awt.image.BufferedImage(tam, tam, java.awt.image.BufferedImage.TYPE_INT_ARGB);
+            Graphics2D g2 = imgRedim.createGraphics();
+            g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
+            g2.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
+            g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+            g2.drawImage(imgOrig, 0, 0, tam, tam, null);
+            g2.dispose();
+            return new ImageIcon(imgRedim);
+        };
 
 // Configurar los tamaños base y hover utilizando el renderizado limpio de la flecha
-final int tamañoBase = 45;   
-final int tamañoZoom = 55;   
-final int paso = 2;
+        final int tamañoBase = 45;
+        final int tamañoZoom = 55;
+        final int paso = 2;
 
-ImageIcon iconoAjustadoNormal = crearIconoCalidad.apply("/Iconos/flecha.png", tamañoBase);
-ImageIcon iconoAjustadoHover  = crearIconoCalidad.apply("/Iconos/flecha.png", tamañoZoom);
+        ImageIcon iconoAjustadoNormal = crearIconoCalidad.apply("/Iconos/flecha.png", tamañoBase);
+        ImageIcon iconoAjustadoHover = crearIconoCalidad.apply("/Iconos/flecha.png", tamañoZoom);
 
 // Botón con ícono de flecha
-JButton jButton1 = new JButton(iconoAjustadoNormal);
-jButton1.setBounds(1400, 35, tamañoBase, tamañoBase); 
-jButton1.setBorderPainted(false);
-jButton1.setContentAreaFilled(false);
-jButton1.setFocusPainted(false);
-jButton1.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        JButton jButton1 = new JButton(iconoAjustadoNormal);
+        jButton1.setBounds(1400, 35, tamañoBase, tamañoBase);
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
+        jButton1.setFocusPainted(false);
+        jButton1.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
 // Acción del botón: mostrar/ocultar panel
-jButton1.addActionListener(e -> {
-    panelOpciones.setVisible(!panelOpciones.isVisible());
-    revalidate();
-    repaint();
-});
-
+        jButton1.addActionListener(e -> {
+            panelOpciones.setVisible(!panelOpciones.isVisible());
+            revalidate();
+            repaint();
+        });
 
 // 🔹 Animación de Zoom de la flecha sin solapamiento de hilos
-jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-    private Timer timerAnimacion;
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            private Timer timerAnimacion;
 
-    @Override
-    public void mouseEntered(java.awt.event.MouseEvent e) {
-        jButton1.setIcon(iconoAjustadoHover);
-        
-        if (timerAnimacion != null && timerAnimacion.isRunning()) {
-            timerAnimacion.stop();
-        }
+            @Override
+            public void mouseEntered(java.awt.event.MouseEvent e) {
+                jButton1.setIcon(iconoAjustadoHover);
 
-        timerAnimacion = new Timer(10, ev -> {
-            int w = jButton1.getWidth();
-            int h = jButton1.getHeight();
-            if (w < tamañoZoom) {
-                int nuevoW = Math.min(w + paso, tamañoZoom);
-                int nuevoH = Math.min(h + paso, tamañoZoom);
-                int nuevoX = jButton1.getX() - (nuevoW - w) / 2;
-                int nuevoY = jButton1.getY() - (nuevoH - h) / 2;
-                jButton1.setBounds(nuevoX, nuevoY, nuevoW, nuevoH);
-            } else {
-                timerAnimacion.stop();
+                if (timerAnimacion != null && timerAnimacion.isRunning()) {
+                    timerAnimacion.stop();
+                }
+
+                timerAnimacion = new Timer(10, ev -> {
+                    int w = jButton1.getWidth();
+                    int h = jButton1.getHeight();
+                    if (w < tamañoZoom) {
+                        int nuevoW = Math.min(w + paso, tamañoZoom);
+                        int nuevoH = Math.min(h + paso, tamañoZoom);
+                        int nuevoX = jButton1.getX() - (nuevoW - w) / 2;
+                        int nuevoY = jButton1.getY() - (nuevoH - h) / 2;
+                        jButton1.setBounds(nuevoX, nuevoY, nuevoW, nuevoH);
+                    } else {
+                        timerAnimacion.stop();
+                    }
+                });
+                timerAnimacion.start();
+            }
+
+            @Override
+            public void mouseExited(java.awt.event.MouseEvent e) {
+                jButton1.setIcon(iconoAjustadoNormal);
+
+                if (timerAnimacion != null && timerAnimacion.isRunning()) {
+                    timerAnimacion.stop();
+                }
+
+                timerAnimacion = new Timer(10, ev -> {
+                    int w = jButton1.getWidth();
+                    int h = jButton1.getHeight();
+                    if (w > tamañoBase) {
+                        int nuevoW = Math.max(w - paso, tamañoBase);
+                        int nuevoH = Math.max(h - paso, tamañoBase);
+                        int nuevoX = jButton1.getX() + (w - nuevoW) / 2;
+                        int nuevoY = jButton1.getY() + (h - nuevoH) / 2;
+                        jButton1.setBounds(nuevoX, nuevoY, nuevoW, nuevoH);
+                    } else {
+                        timerAnimacion.stop();
+                    }
+                });
+                timerAnimacion.start();
             }
         });
-        timerAnimacion.start();
-    }
 
-    @Override
-    public void mouseExited(java.awt.event.MouseEvent e) {
-        jButton1.setIcon(iconoAjustadoNormal);
-        
-        if (timerAnimacion != null && timerAnimacion.isRunning()) {
-            timerAnimacion.stop();
-        }
-
-        timerAnimacion = new Timer(10, ev -> {
-            int w = jButton1.getWidth();
-            int h = jButton1.getHeight();
-            if (w > tamañoBase) {
-                int nuevoW = Math.max(w - paso, tamañoBase);
-                int nuevoH = Math.max(h - paso, tamañoBase);
-                int nuevoX = jButton1.getX() + (w - nuevoW) / 2;
-                int nuevoY = jButton1.getY() + (h - nuevoH) / 2;
-                jButton1.setBounds(nuevoX, nuevoY, nuevoW, nuevoH);
-            } else {
-                timerAnimacion.stop();
-            }
-        });
-        timerAnimacion.start();
-    }
-});
-
-    this.add(jButton1);
+        this.add(jButton1);
         this.add(panelOpciones);
 
         // 🔹 2. 🛠️ SOLUCIÓN AL ORDEN DE CAPAS (Z-ORDER) SIN USAR PANEL INTERMEDIO:
         // Forzamos a que la flecha esté al frente de todo (Capa 0)
         this.setComponentZOrder(jButton1, 0);
-        
+
         // El panel de opciones flotante justo debajo de la flecha (Capa 1)
         this.setComponentZOrder(panelOpciones, 1);
-        
+
         // Enviamos tu componente de fondo ("fondo") al último lugar absoluto de la lista
         if (fondo != null) {
             this.setComponentZOrder(fondo, this.getComponentCount() - 1);
@@ -249,9 +246,9 @@ jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
         // 🔹 3. Forzar el refresco de renderizado en 'this'
         this.revalidate();
         this.repaint();
-    
-    // Solo define el tamaño completo real que deba medir tu diseño
-    this.setPreferredSize(new java.awt.Dimension(1494, 1795));
+
+        // Solo define el tamaño completo real que deba medir tu diseño
+        this.setPreferredSize(new java.awt.Dimension(1494, 1795));
     }
 
     /**
@@ -428,101 +425,97 @@ jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
     }// </editor-fold>//GEN-END:initComponents
 
     private void boton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton21ActionPerformed
-GUI_USUARIO.PruebaImpacto nuevaPantalla = new GUI_USUARIO.PruebaImpacto(1);
+        GUI_USUARIO.PruebaImpacto nuevaPantalla = new GUI_USUARIO.PruebaImpacto(1);
 
-    // 2. Buscamos el contenedor principal de las pantallas
-    java.awt.Container padre = this.getParent();
+        // 2. Buscamos el contenedor principal de las pantallas
+        java.awt.Container padre = this.getParent();
 
-    if (padre != null) {
-        padre.removeAll(); // Borramos la pantalla de inicio actual
-        
-        // Ajustamos la nueva pantalla al tamaño del contenedor derecho
-        nuevaPantalla.setSize(padre.getWidth(), padre.getHeight());
-        nuevaPantalla.setLocation(0, 0);
-        
-        padre.add(nuevaPantalla); // Agregamos la pantalla de juego
-        padre.revalidate();       // Refrescamos el diseño
-        padre.repaint();          // Volvemos a pintar la interfaz
-        
-        
-    }   
+        if (padre != null) {
+            padre.removeAll(); // Borramos la pantalla de inicio actual
+
+            // Ajustamos la nueva pantalla al tamaño del contenedor derecho
+            nuevaPantalla.setSize(padre.getWidth(), padre.getHeight());
+            nuevaPantalla.setLocation(0, 0);
+
+            padre.add(nuevaPantalla); // Agregamos la pantalla de juego
+            padre.revalidate();       // Refrescamos el diseño
+            padre.repaint();          // Volvemos a pintar la interfaz  
+        }
     }//GEN-LAST:event_boton21ActionPerformed
 
     public void actualizarInterfazRutina(double fuerzaUsuario) {
-    // 1. Limpiamos la pantalla ocultando los tres niveles de ejercicio
-    panelPrincipiante1.setVisible(false);
-    panelIntermedio1.setVisible(false);
-    panelAvanzado.setVisible(false);
+        // 1. Limpiamos la pantalla ocultando los tres niveles de ejercicio
+        panelPrincipiante1.setVisible(false);
+        panelIntermedio1.setVisible(false);
+        panelAvanzado.setVisible(false);
 
-    System.out.println("DEBUG: La fuerza/punteo que llegó a Rutinas es: " + fuerzaUsuario);
-    
-    // 2. Evaluamos el punteo del golpe en la máquina de boxeo
-    if (fuerzaUsuario <= 0) {
-        // Si no hay datos, se queda todo oculto
-    } 
-    else if (fuerzaUsuario <= 300) {
-        // Novato / Principiante -> Muestra el panel de principiante
-        panelPrincipiante1.setVisible(true);
-    } 
-    else if (fuerzaUsuario > 300 && fuerzaUsuario <= 700) {
-        // Intermedio -> Muestra el panel intermedio
-        panelIntermedio1.setVisible(true);
-    } 
-    else {
-        // Avanzado -> Muestra el panel avanzado
-        panelAvanzado.setVisible(true);
-    }
-    
-    this.revalidate();
-    this.repaint();
-}
-private void cargarImagenesDesdeBD() {
-    try {
-        DB_Rutinas db = new DB_Rutinas();
-        ResultSet rs = db.obtenerTodasLasRutinas();
-        while (rs.next()) {
-            int id = rs.getInt("id_rutina");
-            String nombreImagen = rs.getString("imagen");
-            java.net.URL ruta = getClass().getResource("/ImagenesR/" + nombreImagen);
-            if (ruta == null) {
-                System.out.println("No existe: " + nombreImagen);
-                continue;
-            }
-            ImageIcon icono = new ImageIcon(ruta);
-            switch (id) {
-                case 1:
-                    labelEscalable13.setIcon(icono);
-                    break;
-                case 2:
-                    labelEscalable14.setIcon(icono);
-                    break;
-                case 3:
-                    labelEscalable15.setIcon(icono);
-                    break;
-                case 4:
-                    labelEscalable1.setIcon(icono);
-                    break;
-                case 5:
-                    labelEscalable4.setIcon(icono);
-                    break;
-                case 6:
-                    labelEscalable5.setIcon(icono);
-                    break;
-                case 7:
-                    labelEscalable7.setIcon(icono);
-                    break;
-                case 8:
-                    labelEscalable8.setIcon(icono);
-                    break;
-                case 9:
-                    labelEscalable9.setIcon(icono);
-                    break;
-            }
+        System.out.println("DEBUG: La fuerza/punteo que llegó a Rutinas es: " + fuerzaUsuario);
+
+        // 2. Evaluamos el punteo del golpe en la máquina de boxeo
+        if (fuerzaUsuario <= 0) {
+            // Si no hay datos, se queda todo oculto
+        } else if (fuerzaUsuario <= 300) {
+            // Novato / Principiante -> Muestra el panel de principiante
+            panelPrincipiante1.setVisible(true);
+        } else if (fuerzaUsuario > 300 && fuerzaUsuario <= 700) {
+            // Intermedio -> Muestra el panel intermedio
+            panelIntermedio1.setVisible(true);
+        } else {
+            // Avanzado -> Muestra el panel avanzado
+            panelAvanzado.setVisible(true);
         }
-    } catch (Exception e) {
-        System.out.println(e.getMessage());
+
+        this.revalidate();
+        this.repaint();
     }
-}
+
+    private void cargarImagenesDesdeBD() {
+        try {
+            DB_Rutinas db = new DB_Rutinas();
+            ResultSet rs = db.obtenerTodasLasRutinas();
+            while (rs.next()) {
+                int id = rs.getInt("id_rutina");
+                String nombreImagen = rs.getString("imagen");
+                java.net.URL ruta = getClass().getResource("/ImagenesR/" + nombreImagen);
+                if (ruta == null) {
+                    System.out.println("No existe: " + nombreImagen);
+                    continue;
+                }
+                ImageIcon icono = new ImageIcon(ruta);
+                switch (id) {
+                    case 1:
+                        labelEscalable13.setIcon(icono);
+                        break;
+                    case 2:
+                        labelEscalable14.setIcon(icono);
+                        break;
+                    case 3:
+                        labelEscalable15.setIcon(icono);
+                        break;
+                    case 4:
+                        labelEscalable1.setIcon(icono);
+                        break;
+                    case 5:
+                        labelEscalable4.setIcon(icono);
+                        break;
+                    case 6:
+                        labelEscalable5.setIcon(icono);
+                        break;
+                    case 7:
+                        labelEscalable7.setIcon(icono);
+                        break;
+                    case 8:
+                        labelEscalable8.setIcon(icono);
+                        break;
+                    case 9:
+                        labelEscalable9.setIcon(icono);
+                        break;
+                }
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private Componentes.Boton2 boton21;

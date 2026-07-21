@@ -424,10 +424,7 @@ public class Comidas extends javax.swing.JPanel {
             padre.add(nuevaPantalla); // Agregamos la pantalla de juego
             padre.revalidate();       // Refrescamos el diseño
             padre.repaint();          // Volvemos a pintar la interfaz
-
         }
-
-
     }//GEN-LAST:event_boton21ActionPerformed
 
     public void actualizarInterfazComida(double pesoUsuario) {

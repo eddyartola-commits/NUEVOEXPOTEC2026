@@ -20,7 +20,8 @@ public class InicioSesion extends javax.swing.JFrame {
 
         // 2. SEGUNDA LÍNEA: Inicializar los componentes del diseñador
         initComponents();
-
+        txtUsuario.addActionListener(e -> btnIniciarSesion.doClick());
+        txtContrasena.addActionListener(e -> btnIniciarSesion.doClick());
         this.setLocationRelativeTo(null);
 
         java.awt.Color colorGrisPlaceholder = new java.awt.Color(153, 153, 153);
@@ -37,7 +38,7 @@ public class InicioSesion extends javax.swing.JFrame {
         txtContrasena.setBorder(lineaInferior);
         txtContrasena.setForeground(colorGrisPlaceholder);
         txtContrasena.setCaretColor(java.awt.Color.WHITE);
-        txtContrasena.setEchoChar((char) 0);
+        txtContrasena.setEchoChar('*');
 
         jCheckBox1.setOpaque(false);
         jCheckBox1.setForeground(java.awt.Color.WHITE);
@@ -141,7 +142,7 @@ public class InicioSesion extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton1);
-        jButton1.setBounds(840, 10, 80, 27);
+        jButton1.setBounds(830, 10, 80, 24);
 
         jButton2.setText("x");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -150,26 +151,28 @@ public class InicioSesion extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton2);
-        jButton2.setBounds(930, 10, 80, 27);
+        jButton2.setBounds(920, 10, 80, 24);
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 40));
 
         Candado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/bloquear.png"))); // NOI18N
-        jPanel1.add(Candado, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 260, 50, 40));
+        jPanel1.add(Candado, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 290, 50, 40));
 
         Usuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/usuario.png"))); // NOI18N
-        jPanel1.add(Usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 170, 50, 40));
+        jPanel1.add(Usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 210, 50, 40));
 
-        textoDifuminadoRegistro1.setText("iniciar sesion");
-        jPanel1.add(textoDifuminadoRegistro1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 90, 290, -1));
+        textoDifuminadoRegistro1.setText("Iniciar Sesión");
+        textoDifuminadoRegistro1.setFont(new java.awt.Font("Horizon", 1, 36)); // NOI18N
+        jPanel1.add(textoDifuminadoRegistro1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 110, 230, 50));
 
-        btnIniciarSesion.setText("INICIAR SESION");
+        btnIniciarSesion.setText("Iniciar Sesión");
+        btnIniciarSesion.setFont(new java.awt.Font("Horizon", 1, 18)); // NOI18N
         btnIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIniciarSesionActionPerformed(evt);
             }
         });
-        jPanel1.add(btnIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 280, 50));
+        jPanel1.add(btnIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 390, 260, 50));
 
         jCheckBox1.setFont(new java.awt.Font("Questrial", 0, 14)); // NOI18N
         jCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
@@ -179,7 +182,7 @@ public class InicioSesion extends javax.swing.JFrame {
                 jCheckBox1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 350, 190, 30));
+        jPanel1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 340, 190, 30));
 
         txtContrasena.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         txtContrasena.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -195,7 +198,7 @@ public class InicioSesion extends javax.swing.JFrame {
                 txtContrasenaActionPerformed(evt);
             }
         });
-        jPanel1.add(txtContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 260, 330, 30));
+        jPanel1.add(txtContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 300, 330, 30));
 
         btnRegresar.setBackground(new java.awt.Color(0, 0, 0));
         btnRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/Regresar.png"))); // NOI18N
@@ -209,12 +212,12 @@ public class InicioSesion extends javax.swing.JFrame {
         jLabel1Usuario1.setFont(new java.awt.Font("Questrial", 0, 36)); // NOI18N
         jLabel1Usuario1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1Usuario1.setText("Contraseña");
-        jPanel1.add(jLabel1Usuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 220, 230, 40));
+        jPanel1.add(jLabel1Usuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 260, 230, 40));
 
         jLabel1Usuario3.setFont(new java.awt.Font("Questrial", 0, 36)); // NOI18N
         jLabel1Usuario3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1Usuario3.setText("Usuario");
-        jPanel1.add(jLabel1Usuario3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 140, 140, 40));
+        jPanel1.add(jLabel1Usuario3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 180, 140, 40));
 
         txtUsuario.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         txtUsuario.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -225,7 +228,7 @@ public class InicioSesion extends javax.swing.JFrame {
                 txtUsuarioFocusLost(evt);
             }
         });
-        jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 180, 330, 30));
+        jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 220, 330, 30));
 
         labelEscalable1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/FondoLogin.png"))); // NOI18N
         labelEscalable1.setMaximumSize(new java.awt.Dimension(35, 35));
@@ -295,9 +298,8 @@ public class InicioSesion extends javax.swing.JFrame {
 
                 } else {
                     javax.swing.JOptionPane.showMessageDialog(this, "El usuario o la contraseña son incorrectos.", "Error de Autenticación", javax.swing.JOptionPane.ERROR_MESSAGE);
-                    txtContrasena.setText("");
-                    txtContrasena.setEchoChar((char) 0);
                     txtContrasena.setText("Contraseña");
+                    txtContrasena.setEchoChar((char) 0);
                     txtContrasena.setForeground(new java.awt.Color(153, 153, 153));
                     txtUsuario.requestFocus();
                 }
@@ -419,26 +421,26 @@ public class InicioSesion extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUsuarioFocusLost
 
     private void txtContrasenaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtContrasenaFocusGained
-String passStr = new String(txtContrasena.getPassword()).trim();
-    
-    // Si el campo tiene el texto guía, lo limpiamos y activamos los asteriscos
-    if (passStr.equalsIgnoreCase("Contraseña") || passStr.equalsIgnoreCase("Contrasena")) {
-        txtContrasena.setText("");
-        txtContrasena.setEchoChar('*'); // 👁️ Aquí se activan los asteriscos al escribir
-        txtContrasena.setForeground(java.awt.Color.WHITE);
-    }
+        String passStr = new String(txtContrasena.getPassword()).trim();
+
+        // Si el campo tiene el texto guía, lo limpiamos y activamos los asteriscos
+        if (passStr.equalsIgnoreCase("Contraseña") || passStr.equalsIgnoreCase("Contrasena")) {
+            txtContrasena.setText("");
+            txtContrasena.setEchoChar('*'); // 👁️ Aquí se activan los asteriscos al escribir
+            txtContrasena.setForeground(java.awt.Color.WHITE);
+        }
     }//GEN-LAST:event_txtContrasenaFocusGained
 
     private void txtContrasenaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtContrasenaFocusLost
-                                    
-  String passStr = new String(txtContrasena.getPassword()).trim();
-    
-    // Si el usuario no escribió nada y se salió, vuelve a poner el texto guía en gris
-    if (passStr.isEmpty() || passStr.equalsIgnoreCase("Contraseña") || passStr.equalsIgnoreCase("Contrasena")) {
-        txtContrasena.setEchoChar((char)0); // 👁️ Quitamos los asteriscos para que se lea la palabra
-        txtContrasena.setText("Contraseña");
-        txtContrasena.setForeground(new java.awt.Color(153, 153, 153)); // Color gris
-    }
+
+        String passStr = new String(txtContrasena.getPassword()).trim();
+
+        // Si el usuario no escribió nada y se salió, vuelve a poner el texto guía en gris
+        if (passStr.isEmpty() || passStr.equalsIgnoreCase("Contraseña") || passStr.equalsIgnoreCase("Contrasena")) {
+            txtContrasena.setText("Contraseña");
+            txtContrasena.setEchoChar((char) 0); // 👁️ Quitamos los asteriscos para que se lea la palabra
+            txtContrasena.setForeground(new java.awt.Color(153, 153, 153)); // Color gris
+        }
         // Quitamos la solicitud automática de foco para que no se cicle el cursor
     }//GEN-LAST:event_txtContrasenaFocusLost
 

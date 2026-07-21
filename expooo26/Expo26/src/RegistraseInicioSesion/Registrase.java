@@ -19,7 +19,9 @@ public class Registrase extends javax.swing.JFrame {
         setUndecorated(true);
 
         initComponents();
-
+        txtUsuario.addActionListener(e -> btnRegistrar.doClick());
+        txtEmail.addActionListener(e -> btnRegistrar.doClick());
+        txtContrasena.addActionListener(e -> btnRegistrar.doClick());
         this.setLocationRelativeTo(null);
 
         // Modificamos propiedades directamente, SIN volver a instanciar (sin 'new')
@@ -132,8 +134,11 @@ public class Registrase extends javax.swing.JFrame {
         });
         jPanel1.add(chkMostrar);
         chkMostrar.setBounds(570, 380, 170, 20);
+
+        textoDifuminadoRegistro1.setText("Registrarse");
+        textoDifuminadoRegistro1.setFont(new java.awt.Font("Horizon", 1, 36)); // NOI18N
         jPanel1.add(textoDifuminadoRegistro1);
-        textoDifuminadoRegistro1.setBounds(120, 50, 310, 32);
+        textoDifuminadoRegistro1.setBounds(660, 90, 200, 50);
 
         txtContrasena.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         txtContrasena.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -211,22 +216,23 @@ public class Registrase extends javax.swing.JFrame {
         lblPregunta.setText("Ya tienes una cuenta? ");
         lblPregunta.setToolTipText("");
         jPanel1.add(lblPregunta);
-        lblPregunta.setBounds(660, 460, 160, 20);
+        lblPregunta.setBounds(660, 470, 160, 20);
 
         lblIrALogin.setFont(new java.awt.Font("Questrial", 1, 14)); // NOI18N
         lblIrALogin.setForeground(new java.awt.Color(255, 255, 255));
         lblIrALogin.setText("Login");
         jPanel1.add(lblIrALogin);
-        lblIrALogin.setBounds(810, 450, 60, 40);
+        lblIrALogin.setBounds(810, 460, 60, 40);
 
-        btnRegistrar.setText("registrase");
+        btnRegistrar.setText("Registrarse");
+        btnRegistrar.setFont(new java.awt.Font("Horizon", 1, 18)); // NOI18N
         btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegistrarActionPerformed(evt);
             }
         });
         jPanel1.add(btnRegistrar);
-        btnRegistrar.setBounds(40, 430, 240, 40);
+        btnRegistrar.setBounds(630, 410, 260, 50);
 
         labelEscalable1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/usuario.png"))); // NOI18N
         jPanel1.add(labelEscalable1);
@@ -259,7 +265,7 @@ public class Registrase extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton2);
-        jButton2.setBounds(920, 10, 80, 24);
+        jButton2.setBounds(920, 10, 70, 24);
 
         jPanel1.add(jPanel2);
         jPanel2.setBounds(0, 0, 1030, 40);
