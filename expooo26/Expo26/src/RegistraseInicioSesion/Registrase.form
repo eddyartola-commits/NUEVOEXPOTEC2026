@@ -59,6 +59,12 @@
           </Constraints>
         </Component>
         <Component class="Componentes.TextoDifuminadoRegistro" name="textoDifuminadoRegistro1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Registrarse"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Horizon" size="36" style="1"/>
+            </Property>
+          </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="600" y="90" width="310" height="-1"/>
@@ -205,7 +211,10 @@
         </Component>
         <Component class="Componentes.Boton" name="btnRegistrar">
           <Properties>
-            <Property name="text" type="java.lang.String" value="registrase"/>
+            <Property name="text" type="java.lang.String" value="Registrarse"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Horizon" size="18" style="1"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegistrarActionPerformed"/>
@@ -290,7 +299,7 @@
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="920" y="10" width="80" height="-1"/>
+                  <AbsoluteConstraints x="920" y="10" width="70" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>

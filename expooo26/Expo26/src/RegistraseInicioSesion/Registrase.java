@@ -19,7 +19,9 @@ public class Registrase extends javax.swing.JFrame {
         setUndecorated(true);
 
         initComponents();
-
+        txtUsuario.addActionListener(e -> btnRegistrar.doClick());
+        txtEmail.addActionListener(e -> btnRegistrar.doClick());
+        txtContrasena.addActionListener(e -> btnRegistrar.doClick());
         this.setLocationRelativeTo(null);
 
         // Modificamos propiedades directamente, SIN volver a instanciar (sin 'new')
@@ -132,6 +134,9 @@ public class Registrase extends javax.swing.JFrame {
         });
         jPanel1.add(chkMostrar);
         chkMostrar.setBounds(570, 380, 170, 20);
+
+        textoDifuminadoRegistro1.setText("Registrarse");
+        textoDifuminadoRegistro1.setFont(new java.awt.Font("Horizon", 1, 36)); // NOI18N
         jPanel1.add(textoDifuminadoRegistro1);
         textoDifuminadoRegistro1.setBounds(600, 90, 310, 29);
 
@@ -219,7 +224,8 @@ public class Registrase extends javax.swing.JFrame {
         jPanel1.add(lblIrALogin);
         lblIrALogin.setBounds(830, 465, 60, 30);
 
-        btnRegistrar.setText("registrase");
+        btnRegistrar.setText("Registrarse");
+        btnRegistrar.setFont(new java.awt.Font("Horizon", 1, 18)); // NOI18N
         btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegistrarActionPerformed(evt);

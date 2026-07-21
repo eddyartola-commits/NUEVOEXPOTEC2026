@@ -60,19 +60,20 @@ public class DB_Rutinas {
     }
 
     public boolean actualizarImagenRutina(int idRutina, String nombre, String imagen) {
-    String sql = "UPDATE Rutinas SET nombre = ?, imagen = ? WHERE id_rutina = ?";
-    try {
-        Connection con = Conexion.conectar();
-        PreparedStatement ps = con.prepareStatement(sql);
-        ps.setString(1, nombre);
-        ps.setString(2, imagen);
-        ps.setInt(3, idRutina);
-        ps.executeUpdate();
-        return true;
-    } catch (Exception e) {
-        System.out.println("Error: " + e.getMessage());
-        return false;
-    }
+        String sql = "UPDATE Rutinas SET nombre = ?, imagen = ? WHERE id_rutina = ?";
+        try {
+            Connection con = Conexion.conectar();
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, nombre);
+            ps.setString(2, imagen);
+            ps.setInt(3, idRutina);
+            int filas = ps.executeUpdate();
+            System.out.println("Filas actualizadas: " + filas);
+            return filas > 0;
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+            return false;
+        }
     }
 
     public ResultSet obtenerTodasLasRutinas() {
