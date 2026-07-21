@@ -133,7 +133,7 @@ public class Registrase extends javax.swing.JFrame {
         jPanel1.add(chkMostrar);
         chkMostrar.setBounds(570, 380, 170, 20);
         jPanel1.add(textoDifuminadoRegistro1);
-        textoDifuminadoRegistro1.setBounds(120, 50, 310, 29);
+        textoDifuminadoRegistro1.setBounds(120, 50, 310, 32);
 
         txtContrasena.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         txtContrasena.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -192,19 +192,19 @@ public class Registrase extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Usuario");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(570, 140, 160, 38);
+        jLabel2.setBounds(570, 140, 160, 47);
 
         jLabel3.setFont(new java.awt.Font("Questrial", 0, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Email");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(570, 220, 110, 38);
+        jLabel3.setBounds(570, 220, 110, 47);
 
         jLabel4.setFont(new java.awt.Font("Questrial", 0, 36)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Contraseña");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(570, 300, 190, 38);
+        jLabel4.setBounds(570, 300, 184, 47);
 
         lblPregunta.setFont(new java.awt.Font("Questrial", 0, 14)); // NOI18N
         lblPregunta.setForeground(new java.awt.Color(255, 255, 255));
@@ -226,7 +226,7 @@ public class Registrase extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnRegistrar);
-        btnRegistrar.setBounds(630, 410, 240, 40);
+        btnRegistrar.setBounds(40, 430, 240, 40);
 
         labelEscalable1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/usuario.png"))); // NOI18N
         jPanel1.add(labelEscalable1);
@@ -250,7 +250,7 @@ public class Registrase extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton1);
-        jButton1.setBounds(840, 10, 70, 27);
+        jButton1.setBounds(840, 10, 70, 24);
 
         jButton2.setText("x");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -259,7 +259,7 @@ public class Registrase extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton2);
-        jButton2.setBounds(920, 10, 80, 27);
+        jButton2.setBounds(920, 10, 80, 24);
 
         jPanel1.add(jPanel2);
         jPanel2.setBounds(0, 0, 1030, 40);
