@@ -141,7 +141,7 @@ public class InicioSesion extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton1);
-        jButton1.setBounds(840, 10, 80, 24);
+        jButton1.setBounds(840, 10, 80, 27);
 
         jButton2.setText("x");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -150,7 +150,7 @@ public class InicioSesion extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton2);
-        jButton2.setBounds(930, 10, 80, 24);
+        jButton2.setBounds(930, 10, 80, 27);
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 40));
 
@@ -169,7 +169,7 @@ public class InicioSesion extends javax.swing.JFrame {
                 btnIniciarSesionActionPerformed(evt);
             }
         });
-        jPanel1.add(btnIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 430, 280, 50));
+        jPanel1.add(btnIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 280, 50));
 
         jCheckBox1.setFont(new java.awt.Font("Questrial", 0, 14)); // NOI18N
         jCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
