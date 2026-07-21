@@ -537,7 +537,7 @@ add(jButton1);
             }
         });
         add(btneliminar);
-        btneliminar.setBounds(900, 860, 280, 60);
+        btneliminar.setBounds(320, 860, 280, 60);
 
         labelEscalable7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/atencion-al-cliente.png"))); // NOI18N
         add(labelEscalable7);
@@ -589,14 +589,14 @@ add(jButton1);
         add(texBox1);
         texBox1.setBounds(20, 600, 340, 70);
 
-        btnver.setText("Ver Reporte");
+        btnver.setText("FILTRAR REPORTE");
         btnver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnverActionPerformed(evt);
             }
         });
         add(btnver);
-        btnver.setBounds(320, 860, 280, 60);
+        btnver.setBounds(910, 860, 280, 60);
 
         btnactualizar.setText("Actualizar Reporte");
         btnactualizar.setFont(new java.awt.Font("Horizon", 1, 13)); // NOI18N
@@ -608,7 +608,7 @@ add(jButton1);
         add(btnactualizar);
         btnactualizar.setBounds(610, 860, 280, 60);
 
-        bntlimpiar.setText("Limpiar Reporte ");
+        bntlimpiar.setText("LIMPIAR CAMPOS");
         bntlimpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bntlimpiarActionPerformed(evt);

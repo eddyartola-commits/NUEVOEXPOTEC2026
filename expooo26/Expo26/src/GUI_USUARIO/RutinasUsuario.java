@@ -2,6 +2,7 @@
 package GUI_USUARIO;
 
 import BaseDatos.DB_Rutinas;
+import GUI.Menu;
 import RegistraseInicioSesion.Registrase;
 import java.awt.Color;
 import java.awt.Cursor;
@@ -274,6 +275,7 @@ jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
         tituloImpacto1 = new Componentes.TituloImpacto();
         tituloImpacto2 = new Componentes.TituloImpacto();
         jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         panelIntermedio1 = new javax.swing.JPanel();
         tituloImpacto5 = new Componentes.TituloImpacto();
         labelEscalable6 = new Labels.LabelEscalable();
@@ -291,7 +293,6 @@ jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
         labelEscalable13 = new Labels.LabelEscalable();
         labelEscalable14 = new Labels.LabelEscalable();
         labelEscalable15 = new Labels.LabelEscalable();
-        jLabel5 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(19, 3, 27));
         setLayout(null);
@@ -320,7 +321,7 @@ jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
 
         labelEscalable2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/flecha-correcta.png"))); // NOI18N
         add(labelEscalable2);
-        labelEscalable2.setBounds(340, 370, 70, 60);
+        labelEscalable2.setBounds(350, 347, 70, 60);
 
         jLabel1.setFont(new java.awt.Font("Horizon", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -335,14 +336,14 @@ jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
         add(jLabel8);
         jLabel8.setBounds(30, 250, 460, 20);
 
-        boton21.setText("VER RUTINA");
+        boton21.setText("JUGAR DE NUEVO");
         boton21.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boton21ActionPerformed(evt);
             }
         });
         add(boton21);
-        boton21.setBounds(90, 370, 350, 70);
+        boton21.setBounds(90, 340, 350, 70);
 
         tituloImpacto1.setText("");
         add(tituloImpacto1);
@@ -360,20 +361,21 @@ jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
         add(jLabel4);
         jLabel4.setBounds(7, 90, 510, 50);
 
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel5.setFont(new java.awt.Font("Horizon", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("comidas deliciosas, balance perfecto de");
+        add(jLabel5);
+        jLabel5.setBounds(10, 210, 510, 40);
+
         panelIntermedio1.setBackground(new java.awt.Color(19, 3, 27));
         panelIntermedio1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tituloImpacto5.setText("Intermedio");
         panelIntermedio1.add(tituloImpacto5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
         panelIntermedio1.add(labelEscalable6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
-
-        labelEscalable1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesR/Flexiones_Pecho.png"))); // NOI18N
         panelIntermedio1.add(labelEscalable1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, -1, -1));
-
-        labelEscalable4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesR/Remo_Mancuernas.png"))); // NOI18N
         panelIntermedio1.add(labelEscalable4, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 120, -1, -1));
-
-        labelEscalable5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesR/Press_Militar_Pie.png"))); // NOI18N
         panelIntermedio1.add(labelEscalable5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 650, -1, -1));
 
         add(panelIntermedio1);
@@ -389,14 +391,8 @@ jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
         jLabel3.setFont(new java.awt.Font("Horizon", 1, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         panelAvanzado.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 0, 20, 50));
-
-        labelEscalable7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesR/Flexiones_Arqueras.png"))); // NOI18N
         panelAvanzado.add(labelEscalable7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
-
-        labelEscalable8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesR/Press_Militar.png"))); // NOI18N
         panelAvanzado.add(labelEscalable8, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 90, -1, -1));
-
-        labelEscalable9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesR/Flexiones_Declinadas2.png"))); // NOI18N
         panelAvanzado.add(labelEscalable9, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 630, -1, -1));
 
         add(panelAvanzado);
@@ -407,45 +403,48 @@ jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
 
         tituloImpacto3.setText("Principiante");
         panelPrincipiante1.add(tituloImpacto3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
-
-        labelEscalable13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesR/Flexiones_Arqueras2.png"))); // NOI18N
         panelPrincipiante1.add(labelEscalable13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, -1, -1));
-
-        labelEscalable14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesR/Press_Militar2.png"))); // NOI18N
         panelPrincipiante1.add(labelEscalable14, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 80, -1, -1));
-
-        labelEscalable15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesR/Flexiones_Declinadas.png"))); // NOI18N
         panelPrincipiante1.add(labelEscalable15, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 640, -1, -1));
+
         add(panelPrincipiante1);
         panelPrincipiante1.setBounds(10, 450, 1480, 1280);
-
-        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel5.setFont(new java.awt.Font("Horizon", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("comidas deliciosas, balance perfecto de");
-        add(jLabel5);
-        jLabel5.setBounds(10, 210, 510, 40);
     }// </editor-fold>//GEN-END:initComponents
 
     private void boton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton21ActionPerformed
-GUI_USUARIO.PruebaImpacto nuevaPantalla = new GUI_USUARIO.PruebaImpacto(1);
+// 1. Instanciamos la nueva pantalla
+    GUI_USUARIO.PruebaImpacto nuevaPantalla = new GUI_USUARIO.PruebaImpacto(1);
 
-    // 2. Buscamos el contenedor principal de las pantallas
+    // 2. Buscamos el contenedor principal (derecho)
     java.awt.Container padre = this.getParent();
 
     if (padre != null) {
-        padre.removeAll(); // Borramos la pantalla de inicio actual
+        // --- CÓDIGO PARA ACTUALIZAR EL MENÚ LATERAL ---
+        // Buscamos el marco/ventana principal que contiene el menú de la izquierda
+        java.awt.Window ventanaPrincipal = javax.swing.SwingUtilities.getWindowAncestor(this);
         
-        // Ajustamos la nueva pantalla al tamaño del contenedor derecho
+        if (ventanaPrincipal instanceof Menu) { // Sustituye 'Menu' por el nombre de tu JFrame o Panel principal del menú
+            Menu menu = (Menu) ventanaPrincipal;
+            
+            // 1. Desteñimos todos los botones
+            menu.resetearColoresBotones(); 
+            
+            // 2. Encendemos el botón 'btnPruebaImpacto' (Jugar)
+            menu.btnPruebaImpacto.setBackground(new java.awt.Color(91, 71, 153));
+            menu.btnPruebaImpacto.setOpaque(true);
+            menu.btnPruebaImpacto.repaint();
+        }
+        // ----------------------------------------------
+
+        // 3. Reemplazamos la pantalla central
+        padre.removeAll();
         nuevaPantalla.setSize(padre.getWidth(), padre.getHeight());
         nuevaPantalla.setLocation(0, 0);
-        
-        padre.add(nuevaPantalla); // Agregamos la pantalla de juego
-        padre.revalidate();       // Refrescamos el diseño
-        padre.repaint();          // Volvemos a pintar la interfaz
-        
-        
-    }   
+
+        padre.add(nuevaPantalla);
+        padre.revalidate();
+        padre.repaint();
+    }
     }//GEN-LAST:event_boton21ActionPerformed
 
     public void actualizarInterfazRutina(double fuerzaUsuario) {

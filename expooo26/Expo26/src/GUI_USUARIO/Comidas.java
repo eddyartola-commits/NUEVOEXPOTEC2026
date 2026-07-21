@@ -287,7 +287,7 @@ public class Comidas extends javax.swing.JPanel {
 
         labelEscalable2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/flecha-correcta.png"))); // NOI18N
         add(labelEscalable2);
-        labelEscalable2.setBounds(260, 340, 70, 60);
+        labelEscalable2.setBounds(350, 340, 70, 60);
 
         labelEscalable3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/usuario (5).png"))); // NOI18N
         add(labelEscalable3);
@@ -335,7 +335,7 @@ public class Comidas extends javax.swing.JPanel {
             }
         });
         add(boton21);
-        boton21.setBounds(10, 340, 350, 70);
+        boton21.setBounds(90, 340, 350, 70);
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/FondoComida.jpeg"))); // NOI18N
         add(fondo);
@@ -358,14 +358,8 @@ public class Comidas extends javax.swing.JPanel {
 
         tituloImpacto3.setText("Principiante");
         panelPrincipiante.add(tituloImpacto3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, -1));
-
-        labelEscalable12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesRC/Tortilla_Espinacas.png"))); // NOI18N
         panelPrincipiante.add(labelEscalable12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 650, 500));
-
-        labelEscalable13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesRC/Atun_Aguacate.png"))); // NOI18N
         panelPrincipiante.add(labelEscalable13, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 630, -1, -1));
-
-        labelEscalable14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesRC/Champiñones_Arroz.png"))); // NOI18N
         panelPrincipiante.add(labelEscalable14, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 90, -1, -1));
 
         add(panelPrincipiante);
@@ -376,14 +370,8 @@ public class Comidas extends javax.swing.JPanel {
 
         tituloImpacto6.setText("Avanzado");
         panelAvanzado.add(tituloImpacto6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, -1));
-
-        labelEscalable6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesRC/Pancakes.png"))); // NOI18N
         panelAvanzado.add(labelEscalable6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
-
-        labelEscalable7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesRC/Salsa_Champiñones.png"))); // NOI18N
         panelAvanzado.add(labelEscalable7, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 90, -1, 500));
-
-        labelEscalable8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesRC/Ensalada_Atun.png"))); // NOI18N
         panelAvanzado.add(labelEscalable8, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 640, -1, -1));
 
         add(panelAvanzado);
@@ -394,14 +382,8 @@ public class Comidas extends javax.swing.JPanel {
 
         tituloImpacto4.setText("Intermedio");
         panelIntermedio.add(tituloImpacto4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, -1));
-
-        labelEscalable1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesRC/Pancakes.png"))); // NOI18N
         panelIntermedio.add(labelEscalable1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
-
-        labelEscalable4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesRC/Filete_Salmon.png"))); // NOI18N
         panelIntermedio.add(labelEscalable4, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 80, -1, -1));
-
-        labelEscalable5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesRC/Carne_De_Res.png"))); // NOI18N
         panelIntermedio.add(labelEscalable5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 630, -1, -1));
 
         add(panelIntermedio);
@@ -409,25 +391,39 @@ public class Comidas extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void boton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton21ActionPerformed
-        GUI_USUARIO.PruebaImpacto nuevaPantalla = new GUI_USUARIO.PruebaImpacto(1);
+         // 1. Instanciamos la nueva pantalla
+    GUI_USUARIO.PruebaImpacto nuevaPantalla = new GUI_USUARIO.PruebaImpacto(1);
 
-        // 2. Buscamos el contenedor principal de las pantallas
-        java.awt.Container padre = this.getParent();
+    // 2. Buscamos el contenedor principal (derecho)
+    java.awt.Container padre = this.getParent();
 
-        if (padre != null) {
-            padre.removeAll(); // Borramos la pantalla de inicio actual
-
-            // Ajustamos la nueva pantalla al tamaño del contenedor derecho
-            nuevaPantalla.setSize(padre.getWidth(), padre.getHeight());
-            nuevaPantalla.setLocation(0, 0);
-
-            padre.add(nuevaPantalla); // Agregamos la pantalla de juego
-            padre.revalidate();       // Refrescamos el diseño
-            padre.repaint();          // Volvemos a pintar la interfaz
-
+    if (padre != null) {
+        // --- CÓDIGO PARA ACTUALIZAR EL MENÚ LATERAL ---
+        // Buscamos el marco/ventana principal que contiene el menú de la izquierda
+        java.awt.Window ventanaPrincipal = javax.swing.SwingUtilities.getWindowAncestor(this);
+        
+        if (ventanaPrincipal instanceof Menu) { // Sustituye 'Menu' por el nombre de tu JFrame o Panel principal del menú
+            Menu menu = (Menu) ventanaPrincipal;
+            
+            // 1. Desteñimos todos los botones
+            menu.resetearColoresBotones(); 
+            
+            // 2. Encendemos el botón 'btnPruebaImpacto' (Jugar)
+            menu.btnPruebaImpacto.setBackground(new java.awt.Color(91, 71, 153));
+            menu.btnPruebaImpacto.setOpaque(true);
+            menu.btnPruebaImpacto.repaint();
         }
+        // ----------------------------------------------
 
+        // 3. Reemplazamos la pantalla central
+        padre.removeAll();
+        nuevaPantalla.setSize(padre.getWidth(), padre.getHeight());
+        nuevaPantalla.setLocation(0, 0);
 
+        padre.add(nuevaPantalla);
+        padre.revalidate();
+        padre.repaint();
+    }
     }//GEN-LAST:event_boton21ActionPerformed
 
     public void actualizarInterfazComida(double pesoUsuario) {

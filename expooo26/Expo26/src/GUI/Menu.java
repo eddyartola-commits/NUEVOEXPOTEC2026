@@ -1135,7 +1135,7 @@ public class Menu extends javax.swing.JFrame {
         jScrollPane1.repaint();
     }
 
-    private void resetearColoresBotones() {
+    public void resetearColoresBotones() {
         // El color oscuro original de tu menú (ajusta el código RGB si es necesario)
         java.awt.Color colorOscuro = new java.awt.Color(19, 3, 27);
 
@@ -1165,7 +1165,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel btnMantenimiento;
     private javax.swing.JPanel btnPantallaAdmi;
     private javax.swing.JPanel btnPantallaP;
-    private javax.swing.JPanel btnPruebaImpacto;
+    public javax.swing.JPanel btnPruebaImpacto;
     private javax.swing.JPanel btnRutinas;
     private javax.swing.JPanel btnRutinasUsuario;
     private Componentes.FIT fIT1;

@@ -367,7 +367,7 @@ add(jButton1);
             }
         });
         add(btnCrear);
-        btnCrear.setBounds(20, 910, 260, 60);
+        btnCrear.setBounds(20, 860, 260, 60);
 
         btnEliminar.setText("eliminar");
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -376,18 +376,18 @@ add(jButton1);
             }
         });
         add(btnEliminar);
-        btnEliminar.setBounds(310, 910, 260, 60);
+        btnEliminar.setBounds(310, 860, 260, 60);
 
-        btnVer.setText("VER");
+        btnVer.setText("FILTRAR");
         btnVer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVerActionPerformed(evt);
             }
         });
         add(btnVer);
-        btnVer.setBounds(880, 910, 260, 60);
+        btnVer.setBounds(880, 860, 260, 60);
 
-        btnModificar.setText("MODIFICAR");
+        btnModificar.setText("ACTUALIZAR");
         btnModificar.setToolTipText("");
         btnModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -395,7 +395,7 @@ add(jButton1);
             }
         });
         add(btnModificar);
-        btnModificar.setBounds(600, 910, 260, 60);
+        btnModificar.setBounds(600, 860, 260, 60);
 
         correo.setPlaceholderText("Correo");
         add(correo);
@@ -463,14 +463,14 @@ add(jButton1);
         add(jLabel16);
         jLabel16.setBounds(480, 550, 180, 50);
 
-        btnLimpiar.setText("Limpiar");
+        btnLimpiar.setText("Limpiar CAMPOS");
         btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLimpiarActionPerformed(evt);
             }
         });
         add(btnLimpiar);
-        btnLimpiar.setBounds(1180, 910, 260, 60);
+        btnLimpiar.setBounds(1180, 860, 260, 60);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed

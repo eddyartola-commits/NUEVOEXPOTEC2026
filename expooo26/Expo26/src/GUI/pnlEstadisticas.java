@@ -520,7 +520,7 @@ add(jButton1);
             }
         });
         add(btnGuardar);
-        btnGuardar.setBounds(60, 880, 260, 60);
+        btnGuardar.setBounds(60, 860, 260, 60);
 
         btnEliminar.setText("eliminar");
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -529,18 +529,18 @@ add(jButton1);
             }
         });
         add(btnEliminar);
-        btnEliminar.setBounds(900, 880, 260, 60);
+        btnEliminar.setBounds(340, 860, 260, 60);
 
-        btnVer.setText("VER");
+        btnVer.setText("FILTRAR");
         btnVer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVerActionPerformed(evt);
             }
         });
         add(btnVer);
-        btnVer.setBounds(340, 880, 260, 60);
+        btnVer.setBounds(900, 860, 260, 60);
 
-        btnModificar.setText("MODIFICAR");
+        btnModificar.setText("ACTUALIZAR");
         btnModificar.setToolTipText("");
         btnModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -548,7 +548,7 @@ add(jButton1);
             }
         });
         add(btnModificar);
-        btnModificar.setBounds(620, 880, 260, 60);
+        btnModificar.setBounds(620, 860, 260, 60);
 
         id_datos.setPlaceholderText("ID DATOS");
         add(id_datos);
@@ -612,14 +612,14 @@ add(jButton1);
         add(jLabel1);
         jLabel1.setBounds(1140, 550, 330, 50);
 
-        btnLimpiar.setText("Limpiar");
+        btnLimpiar.setText("Limpiar CAMPOS");
         btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLimpiarActionPerformed(evt);
             }
         });
         add(btnLimpiar);
-        btnLimpiar.setBounds(1180, 880, 260, 60);
+        btnLimpiar.setBounds(1180, 860, 260, 60);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCrear1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrear1ActionPerformed

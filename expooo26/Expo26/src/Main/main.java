@@ -1,11 +1,11 @@
 
 package Main;
-import GUI.PantallaCarga ;
+import RegistraseInicioSesion.Registrase ;
 
 public class main {
 
     public static void main(String[] args) {
-        PantallaCarga ligin = new PantallaCarga();
+        Registrase ligin = new Registrase();
         ligin.setVisible(true);
         
     }

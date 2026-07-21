@@ -315,28 +315,45 @@ public class pnlMenu extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void boton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton21ActionPerformed
-     GUI_USUARIO.PruebaImpacto nuevaPantalla = new GUI_USUARIO.PruebaImpacto(1); 
-    
-    // 2. Buscamos el contenedor principal
+     // 1. Instanciamos la nueva pantalla
+    GUI_USUARIO.PruebaImpacto nuevaPantalla = new GUI_USUARIO.PruebaImpacto(1);
+
+    // 2. Buscamos el contenedor principal (derecho)
     java.awt.Container padre = this.getParent();
-    
+
     if (padre != null) {
-        padre.removeAll(); // Borramos la pantalla de inicio actual
+        // --- CÓDIGO PARA ACTUALIZAR EL MENÚ LATERAL ---
+        // Buscamos el marco/ventana principal que contiene el menú de la izquierda
+        java.awt.Window ventanaPrincipal = javax.swing.SwingUtilities.getWindowAncestor(this);
         
-        // Ajustamos la nueva pantalla al tamaño del contenedor derecho
+        if (ventanaPrincipal instanceof Menu) { // Sustituye 'Menu' por el nombre de tu JFrame o Panel principal del menú
+            Menu menu = (Menu) ventanaPrincipal;
+            
+            // 1. Desteñimos todos los botones
+            menu.resetearColoresBotones(); 
+            
+            // 2. Encendemos el botón 'btnPruebaImpacto' (Jugar)
+            menu.btnPruebaImpacto.setBackground(new java.awt.Color(91, 71, 153));
+            menu.btnPruebaImpacto.setOpaque(true);
+            menu.btnPruebaImpacto.repaint();
+        }
+        // ----------------------------------------------
+
+        // 3. Reemplazamos la pantalla central
+        padre.removeAll();
         nuevaPantalla.setSize(padre.getWidth(), padre.getHeight());
         nuevaPantalla.setLocation(0, 0);
-        
-        padre.add(nuevaPantalla); // Agregamos la pantalla de juego
-        padre.revalidate();       // Refrescamos el diseño
-        padre.repaint();          // Volvemos a pintar la interfaz
+
+        padre.add(nuevaPantalla);
+        padre.revalidate();
+        padre.repaint();
     }
     }//GEN-LAST:event_boton21ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private Componentes.Barra barra1;
-    private Componentes.Boton2 boton21;
+    public Componentes.Boton2 boton21;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
